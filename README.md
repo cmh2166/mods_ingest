@@ -14,6 +14,10 @@ This site will be organized as follows:
 
   1. Mform_100.xml (the ingest form)
   2. Mmods_100.xml (the mods datastream created by Islandora using Mform_100.xml)
+  
+To test this file in your own vagrant islandora site, contnet type basic image:
+   > cd /var/www/drupal/sites/all/modules/islandora_solution_pack_image/xml
+   > cp Mform_100.xml islandora_basic_image_form_mods.xml
 
 Changes will be tracked in the wiki at:
 
