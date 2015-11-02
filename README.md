@@ -3,6 +3,8 @@ mods ingest for Islandora
 
 This site is to track development of a mods ingest form for Islandora.
 
+151102: changes made to Mform_100.xml to correct problem with identifier element.
+
 The development will be guided by:
  1.  http://www.loc.gov/standards/mods/mods-outline-3-5.html (mods 3.5 standard)
  2.  https://wiki.lib.utk.edu/display/DLP/Trace+Metadata+Application+Profile (from Christina Harlowe)

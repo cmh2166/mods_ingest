@@ -1,19 +1,26 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>0012_003299_000206_0001</title>
-    <subTitle>0012_003299_000206_0001</subTitle>
+    <title>Title chdLargeImg3g</title>
+    <titlePart>sub title</titlePart>
   </titleInfo>
-  <name type="personal">
+  <identifier type="local">0012_003299_000207_0001</identifier>
+  <name authority="NOSELECTION" type="personal">
     <namePart>Charlie Daniel</namePart>
     <role>
-      <roleTerm authority="marcrelator" type="text">Artist</roleTerm>
+      <roleTerm authority="marcrelator" type="text">Creator (Artist)</roleTerm>
+    </role>
+  </name>
+  <name authority="LCNAF" type="family">
+    <namePart>Mrs. Charlie Daniel</namePart>
+    <role>
+      <roleTerm authority="marcrelator" type="text">Helper</roleTerm>
     </role>
   </name>
   <typeOfResource>still image</typeOfResource>
-  <genre authority="lctgm">Editorial</genre>
+  <genre authority="lctgm">Cartoon</genre>
   <originInfo>
-    <dateIssued>2014-10-08</dateIssued>
+    <dateCreated>1927-01-01</dateCreated>
     <publisher>Knoxville News Sentinel</publisher>
     <place>
       <placeTerm authority="marccountry" type="code">USA</placeTerm>
@@ -25,23 +32,21 @@
   <language>
     <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
   </language>
-  <abstract>auto populate rights for 0012_003299_000206_0001</abstract>
-  <identifier type="local">0012_003299_000206_0001</identifier>
-  <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</accessCondition>
+  <abstract>description cartoon_000207</abstract>
   <physicalDescription>
     <form authority="marcform">nonprojected graphic</form>
     <extent>1 image</extent>
   </physicalDescription>
-  <note/>
+  <note>note  cartoon_000207</note>
   <subject>
-    <topic>Political</topic>
-    <geographic>Tennessee</geographic>
-    <temporal>2015</temporal>
+    <topic/>
+    <geographic/>
+    <temporal/>
     <hierarchicalGeographic>
       <continent>North America</continent>
       <country>USA</country>
       <province>Tennessee</province>
-      <region>SouthEast</region>
+      <region>SEC</region>
       <county>Knox</county>
       <city>Knoxville</city>
       <citySection/>
