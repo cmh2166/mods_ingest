@@ -1,26 +1,23 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>Title chdLargeImg3g</title>
-    <titlePart>sub title</titlePart>
+    <title>LIMform.04</title>
+    <subTitle>purpose: add full select menu for role2, add rights</subTitle>
   </titleInfo>
-  <identifier type="local">0012_003299_000207_0001</identifier>
-  <name authority="NOSELECTION" type="personal">
+  <identifier type="local">0012_003299_000201_0001</identifier>
+  <name authority="lcnaf" type="personal">
     <namePart>Charlie Daniel</namePart>
     <role>
-      <roleTerm authority="marcrelator" type="text">Creator (Artist)</roleTerm>
+      <roleTerm authority="marcrelator" type="text">Artist</roleTerm>
     </role>
-  </name>
-  <name authority="LCNAF" type="family">
-    <namePart>Mrs. Charlie Daniel</namePart>
     <role>
-      <roleTerm authority="marcrelator" type="text">Helper</roleTerm>
+      <roleTerm authority="marcrelator" type="text">Creator</roleTerm>
     </role>
   </name>
   <typeOfResource>still image</typeOfResource>
   <genre authority="lctgm">Cartoon</genre>
   <originInfo>
-    <dateCreated>1927-01-01</dateCreated>
+    <dateCreated>1951-01-01</dateCreated>
     <publisher>Knoxville News Sentinel</publisher>
     <place>
       <placeTerm authority="marccountry" type="code">USA</placeTerm>
@@ -32,16 +29,16 @@
   <language>
     <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
   </language>
-  <abstract>description cartoon_000207</abstract>
+  <abstract>mods:abstract</abstract>
   <physicalDescription>
     <form authority="marcform">nonprojected graphic</form>
     <extent>1 image</extent>
   </physicalDescription>
-  <note>note  cartoon_000207</note>
+  <note>mods:note authority attribute is fixed now</note>
   <subject>
-    <topic/>
-    <geographic/>
-    <temporal/>
+    <topic>topic 01</topic>
+    <geographic>geo 01</geographic>
+    <temporal>temp 01</temporal>
     <hierarchicalGeographic>
       <continent>North America</continent>
       <country>USA</country>
@@ -49,10 +46,11 @@
       <region>SEC</region>
       <county>Knox</county>
       <city>Knoxville</city>
-      <citySection/>
+      <citySection>city-sections-value</citySection>
     </hierarchicalGeographic>
     <cartographics>
-      <coordinates/>
+      <coordinates>lat/long</coordinates>
     </cartographics>
+    <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</accessCondition>
   </subject>
 </mods>
