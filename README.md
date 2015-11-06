@@ -23,7 +23,7 @@ Basic Image:
 create identifier: 0012_003299_00207_0001
      ingest image: 0012_003299_00207_0001.jpg 
 
-1. Copy Mform_100.xml to vagrant/drupal_home/sites/all/modules/islandora_solution_pack_image//xml/islandora_basic_image_form_mods.xml
+1. Copy Mform_100.xml to vagrant/drupal_home/sites/all/modules/islandora_solution_pack_image/xml/islandora_basic_image_form_mods.xml
 2. Ingest 0012_003299_00207_0001
 3. View datastream MODS
 
@@ -32,7 +32,7 @@ Large Image:
 create identifier: 0012_003299_00207_0001
      ingest image: 0012_003299_00207_0001.tif
 
-1. Copy Mform_100.xml to vagrant/drupal_home/sites/all/modules/islandora_solution_pack_large_image//xml/islandora_basic_image_form_mods.xml
+1. Copy Mform_100.xml to vagrant/drupal_home/sites/all/modules/islandora_solution_pack_large_image/xml/islandora_basic_image_form_mods.xml
 2. Ingest 0012_003299_00207_0001
 3. View datastream MODS
 
