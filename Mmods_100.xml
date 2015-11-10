@@ -1,20 +1,13 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.06</title>
-    <subTitle>purpose: remove extra identifier and fields</subTitle>
+    <title>LIMform.08</title>
+    <subTitle>purpose: enable input of multiple roleTermValues</subTitle>
   </titleInfo>
-  <identifier type="local">
-    <identifier>0012_003299_000206_0001</identifier>
-  </identifier>
-  <identifier type="other">
-    <identifier>CDAN_0006</identifier>
-  </identifier>
+  <identifier type="local">0012_003299_000206_0001</identifier>
+  <identifier type="legacy">CDAN_0006</identifier>
   <name authority="lcnaf" type="personal">
     <namePart>Charlie Daniel</namePart>
-    <role>
-      <roleTerm authority="marcrelator" type="text">Artist</roleTerm>
-    </role>
     <role>
       <roleTerm authority="marcrelator" type="text">Creator</roleTerm>
     </role>
