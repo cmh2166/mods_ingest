@@ -30,7 +30,13 @@
         <properties>
           <type>markup</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -56,8 +62,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>LIMform.08</default_value>
-              <description>import Large image MODS form.08 created from form.07</description>
+              <default_value>LIMform.201</default_value>
+              <description>import Large image MODS form.201 created from LIMform.201a revised version of LIM.200</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -89,12 +95,12 @@
           </element>
           <element name="subTitle">
             <properties>
-              <type>textfield</type>
+              <type>textarea</type>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>purpose: enable input of multiple roleTermValues</default_value>
-              <description>describe purpose of this test.The submit works on form.07</description>
+              <default_value>purpose: revise Form term values in physicalDescription; move accessCondition outside of subject fieldset</default_value>
+              <description>describe purpose of this test.The submit works on form.200</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1138,28 +1144,58 @@
             <properties>
               <type>select</type>
               <access>TRUE</access>
-              <default_value>nonprojected graphic</default_value>
-              <description>A designation of a particular physical presentation of a
-                                resource, including the physical form or medium of material for a
-                                resource.</description>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>books</default_value>
+              <description>UTK Form Terms from &lt;br/&gt;
+https://docs.google.com/spreadsheets/d/16jPboHUoBS5ZfuopZGoBd5RF79qcE9hHw9QwYNPYzBY/edit?pli=1#gid=0</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <options>
-                <videorecording>videorecording</videorecording>
-                <unspecified>unspecified</unspecified>
-                <text>text</text>
-                <index key="tactile material">tactile material</index>
-                <index key="sound recording">sound recording</index>
-                <index key="remote-sensing image">remote-sensing image</index>
-                <index key="projected graphic">projected graphic</index>
-                <index key="notated music">notated music</index>
-                <index key="nonprojected graphic">nonprojected graphic</index>
-                <index key="motion picture">motion picture</index>
-                <microform>microform</microform>
-                <map>map</map>
-                <kit>kit</kit>
-                <globe>globe</globe>
-                <index key="electronic resource">electronic resource</index>
+                <index key="albums(books)">albums(books)</index>
+                <index key="architectural drawings">architectural drawings(visual works)</index>
+                <books>books</books>
+                <index key="cartoons(humorous images)">cartoons(humorous images)</index>
+                <index key="clippings(information artifacts)">clippings(information artifacts)</index>
+                <index key="corporation reports">corporation reports</index>
+                <correspondence>correspondence</correspondence>
+                <diagrams>diagrams</diagrams>
+                <index key="drawings(visual works)">drawings(visual works)</index>
+                <index key="ephemera(general)">ephemera(general)</index>
+                <filmstrips>filmstrips</filmstrips>
+                <handbooks>handbooks</handbooks>
+                <illustrations>illustrations</illustrations>
+                <index key="manuscripts(document genre)">manuscripts(document genre)</index>
+                <index key="maps(documents)">maps(documents)</index>
+                <index key="minutes(administrative records)">minutes(administrative records)</index>
+                <money>money</money>
+                <index key="moving images">moving images</index>
+                <music>music</music>
+                <index key="negatives(photographic)">negatives(photographic)</index>
+                <objects>objects</objects>
+                <index key="oral histories(document genres)">oral histories(document genres)</index>
+                <index key="paintings(visual works)">paintings(visual works)</index>
+                <pamphlets>pamphlets</pamphlets>
+                <periodicals>periodicals</periodicals>
+                <photographs>photographs</photographs>
+                <postcards>postcards</postcards>
+                <posters>posters</posters>
+                <index key="printed ephemera">printed ephemera</index>
+                <index key="prints(visual works)">prints(visual works)</index>
+                <index key="record covers">record covers</index>
+                <index key="records(documents)">records(documents)</index>
+                <reports>reports</reports>
+                <scores>scores</scores>
+                <sermons>sermons</sermons>
+                <index key="signs (declatory or advertising artifacts)">signs (declatory or advertising artifacts)</index>
+                <index key="sound recordings">sound recordings</index>
+                <index key="speeches(documents)">speeches(documents)</index>
+                <transparencies>transparencies</transparencies>
+                <index key="video recordings">video recordings</index>
               </options>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Form</title>
               <tree>TRUE</tree>
               <actions>
@@ -1170,7 +1206,7 @@
                   <type>xml</type>
                   <prefix>NULL</prefix>
                   <value>&lt;form
-                                        authority="marcform"&gt;%value%&lt;/form&gt;</value>
+                                        authority="aat"&gt;%value%&lt;/form&gt;</value>
                 </create>
                 <read>
                   <path>mods:form</path>
@@ -1806,43 +1842,43 @@
               </element>
             </children>
           </element>
-          <element name="accessCondition">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <default_value>The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</default_value>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Rights (mods:accessCondition)</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>xml</type>
-                  <prefix>NULL</prefix>
-                  <value>&lt;accessCondition type="use and reproduction"&gt;%value%&lt;/accessCondition&gt;</value>
-                </create>
-                <read>
-                  <path>mods:accessCondition[@type='use and reproduction']</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>NULL</delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
         </children>
+      </element>
+      <element name="accessCondition">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <default_value>The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</default_value>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Rights (mods:accessCondition)</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;accessCondition type="use and reproduction"&gt;%value%&lt;/accessCondition&gt;</value>
+            </create>
+            <read>
+              <path>mods:accessCondition[@type='use and reproduction']</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
       </element>
     </children>
   </form>
