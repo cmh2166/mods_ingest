@@ -787,7 +787,12 @@
         <properties>
           <type>select</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>still image</default_value>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <options>
             <text>text</text>
             <cartographic>cartographic</cartographic>
@@ -802,6 +807,7 @@
             <index key="still image">still image</index>
           </options>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Type of Resource</title>
           <tree>TRUE</tree>
           <actions>
@@ -835,7 +841,9 @@
           <default_value>Cartoon</default_value>
           <description>A term that best describes the genre of the image. A excellent
                         source for terms is the Thesaurus for Graphic Materials from the Library of
-                        Congress - http://www.loc.gov/pictures/collection/tgm/</description>
+                        Congress - http://www.loc.gov/pictures/collection/tgm/
+&lt;br&gt;Marc Genre Term List
+&lt;br&gt;http://www.loc.gov/standards/valuelist/marcgt.html </description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1119,7 +1127,13 @@
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Physical Description</title>
           <tree>TRUE</tree>
           <actions>
@@ -1188,11 +1202,6 @@ https://docs.google.com/spreadsheets/d/16jPboHUoBS5ZfuopZGoBd5RF79qcE9hHw9QwYNPY
                 <reports>reports</reports>
                 <scores>scores</scores>
                 <sermons>sermons</sermons>
-                <index key="signs (declatory or advertising artifacts)">signs (declatory or advertising artifacts)</index>
-                <index key="sound recordings">sound recordings</index>
-                <index key="speeches(documents)">speeches(documents)</index>
-                <transparencies>transparencies</transparencies>
-                <index key="video recordings">video recordings</index>
               </options>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
@@ -1246,6 +1255,88 @@ https://docs.google.com/spreadsheets/d/16jPboHUoBS5ZfuopZGoBd5RF79qcE9hHw9QwYNPY
                 </create>
                 <read>
                   <path>mods:extent</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="internetMediaType">
+            <properties>
+              <type>select</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>image/tif</default_value>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <options>
+                <index key="image/tif">image/tif</index>
+                <index key="image/jpg">image/jpg</index>
+                <index key="image/jp2">image/jp2</index>
+                <index key="image/jpeg">image/jpeg</index>
+              </options>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>internetMediaType</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>internetMediaType</value>
+                </create>
+                <read>
+                  <path>mods:physicalLocation/mods:internetMediaType</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="digitalOrigin">
+            <properties>
+              <type>select</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>reformatted digital</default_value>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <options>
+                <index key="reformatted digital">reformatted digital</index>
+                <index key="born digital">born digital</index>
+              </options>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>digitalOrigin</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>digitalOrigin</value>
+                </create>
+                <read>
+                  <path>mods:physicalLocation/mods:digitalOrigin</path>
                   <context>parent</context>
                 </read>
                 <update>

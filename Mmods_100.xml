@@ -28,8 +28,10 @@
   </language>
   <abstract>mods:abstract</abstract>
   <physicalDescription>
-    <form authority="aat">books</form>
+    <form authority="aat">cartoons(humorous images)</form>
     <extent>1 image</extent>
+    <internetMediaType>image/tif</internetMediaType>
+    <digitalOrigin>reformatted digital</digitalOrigin>
   </physicalDescription>
   <note>mods:note authority attribute is fixed now</note>
   <subject>
