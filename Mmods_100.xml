@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.201</title>
-    <subTitle>purpose: revise Form term values in physicalDescription; move accessCondition outside of subject fieldset</subTitle>
+    <title>LIMform.203</title>
+    <subTitle>purpose: revise Genre to select term authority and to be required and repeatable.</subTitle>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
   <name authority="lcnaf" type="personal">
@@ -12,7 +12,8 @@
     </role>
   </name>
   <typeOfResource>still image</typeOfResource>
-  <genre authority="lctgm">Cartoon</genre>
+  <genre authority="aat">Cartoons</genre>
+  <genre authority="aat">newspapers</genre>
   <originInfo>
     <dateCreated>1951-01-01</dateCreated>
     <publisher>Knoxville News Sentinel</publisher>
@@ -28,7 +29,7 @@
   </language>
   <abstract>mods:abstract</abstract>
   <physicalDescription>
-    <form authority="aat">cartoons(humorous images)</form>
+    <form authority="aat">books</form>
     <extent>1 image</extent>
     <internetMediaType>image/tif</internetMediaType>
     <digitalOrigin>reformatted digital</digitalOrigin>
