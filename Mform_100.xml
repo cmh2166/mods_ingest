@@ -63,7 +63,7 @@
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
               <default_value>LIMform.203</default_value>
-              <description>import Large image MODS form.203 created from LIMform.202 &lt;br&gt;Revise Genre by copying Identifier in text editor.</description>
+              <description>import Large image MODS form.205 created from LIMform.203 &lt;br&gt;Revise Form by copying Genre in text editor.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1244,82 +1244,143 @@
           </actions>
         </properties>
         <children>
-          <element name="form">
+		
+		
+ 
+		  
+     <element name="form">
+        <properties>
+          <type>tabs</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Form(s)</title>
+          <tree>TRUE</tree>
+        </properties>
+        <children>
+          <element name="0">
             <properties>
-              <type>select</type>
+              <type>tabpanel</type>
               <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <default_value>books</default_value>
-              <description>UTK Form Terms from &lt;br/&gt;
-https://docs.google.com/spreadsheets/d/16jPboHUoBS5ZfuopZGoBd5RF79qcE9hHw9QwYNPYzBY/edit?pli=1#gid=0
-&lt;br/&gt;Use form to describe the resource itself.  &lt;br/&gt;Use genre to describe the content of the resource.</description>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <options>
-                <index key="albums(books)">albums(books)</index>
-                <index key="architectural drawings">architectural drawings(visual works)</index>
-                <books>books</books>
-                <index key="cartoons(humorous images)">cartoons(humorous images)</index>
-                <index key="clippings(information artifacts)">clippings(information artifacts)</index>
-                <index key="corporation reports">corporation reports</index>
-                <correspondence>correspondence</correspondence>
-                <diagrams>diagrams</diagrams>
-                <index key="drawings(visual works)">drawings(visual works)</index>
-                <index key="ephemera(general)">ephemera(general)</index>
-                <filmstrips>filmstrips</filmstrips>
-                <handbooks>handbooks</handbooks>
-                <illustrations>illustrations</illustrations>
-                <index key="manuscripts(document genre)">manuscripts(document genre)</index>
-                <index key="maps(documents)">maps(documents)</index>
-                <index key="minutes(administrative records)">minutes(administrative records)</index>
-                <money>money</money>
-                <index key="moving images">moving images</index>
-                <music>music</music>
-                <index key="negatives(photographic)">negatives(photographic)</index>
-                <objects>objects</objects>
-                <index key="oral histories(document genres)">oral histories(document genres)</index>
-                <index key="paintings(visual works)">paintings(visual works)</index>
-                <pamphlets>pamphlets</pamphlets>
-                <periodicals>periodicals</periodicals>
-                <photographs>photographs</photographs>
-                <postcards>postcards</postcards>
-                <posters>posters</posters>
-                <index key="printed ephemera">printed ephemera</index>
-                <index key="prints(visual works)">prints(visual works)</index>
-                <index key="record covers">record covers</index>
-                <index key="records(documents)">records(documents)</index>
-                <reports>reports</reports>
-                <scores>scores</scores>
-                <sermons>sermons</sermons>
-              </options>
-              <required>TRUE</required>
-              <resizable>FALSE</resizable>
-              <title>Form</title>
+              <required>FALSE</required>
               <tree>TRUE</tree>
               <actions>
                 <create>
                   <path>self::node()</path>
                   <context>parent</context>
                   <schema/>
-                  <type>xml</type>
+                  <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;form authority="aat"&gt;%value%&lt;/form&gt;</value>
+                  <value>form</value>
                 </create>
                 <read>
                   <path>mods:form</path>
                   <context>parent</context>
                 </read>
                 <update>
+                  <path/>
+                  <context>document</context>
+                </update>
+                <delete>
                   <path>self::node()</path>
                   <context>self</context>
-                </update>
-                <delete>NULL</delete>
+                </delete>
               </actions>
             </properties>
-            <children/>
+            <children>
+              <element name="authority">
+                <properties>
+                  <type>select</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <default_value>aat</default_value>
+                  <description>&lt;b&gt;local&lt;/b&gt; -- https://docs.google.com/spreadsheets/d/16jPboHUoBS5ZfuopZGoBd5RF79qcE9hHw9QwYNPYzBY/edit?pli=1#gid=0&lt;br/&gt;
+				  &lt;b&gt;aat&lt;/b&gt; --  http://www.getty.edu/research/tools/vocabularies/aat/index.html&lt;br&gt;
+&lt;b&gt;lctgm&lt;/b&gt; --  http://www.loc.gov/rr/print/tgm2/
+&lt;br&gt;
+&lt;b&gt;marcgt&lt;/b&gt; --  http://www.loc.gov/standards/valuelist/marcgt.html</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <options>
+				  <index key="aat">local</index>
+                    <aat>aat</aat>
+                    <lctgm>lctgm</lctgm>
+                    <marcgt>marcgt</marcgt>
+                  </options>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
+                  <title>Authority</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>attribute</type>
+                      <prefix>NULL</prefix>
+                      <value>authority</value>
+                    </create>
+                    <read>
+                      <path>@authority</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+              <element name="form">
+                <properties>
+                  <type>textfield</type>
+                  <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <default_value>Cartoons</default_value>
+                  <description>A term that best describes the resource. Please select the authority that applies to the term entered in form.
+&lt;br&gt;Use genre to describe the content of  the resource (not the resource itself).
+</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>TRUE</required>
+                  <resizable>FALSE</resizable>
+                  <title>Form</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>%value%</value>
+                    </create>
+                    <read>
+                      <path>mods:form</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
           </element>
+        </children>
+      </element>		  
+		  
           <element name="extent">
             <properties>
               <type>textfield</type>
