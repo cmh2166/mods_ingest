@@ -14,7 +14,8 @@
   <typeOfResource>still image</typeOfResource>
   <genre authority="aat">Cartoons</genre>
   <originInfo>
-    <dateCreated>1951-01-01</dateCreated>
+    <dateCreated encoding="edtf" keyDate="yes" point="start">1951-01-01</dateCreated>
+    <dateCreated encoding="edtf" keyDate="yes" point="end">1971-01-01</dateCreated>
     <publisher>Knoxville News Sentinel</publisher>
     <place>
       <placeTerm authority="marccountry" type="code">USA</placeTerm>
@@ -29,7 +30,6 @@
   <abstract>mods:abstract</abstract>
   <physicalDescription>
     <form authority="aat">Cartoons</form>
-    <form authority="lctgm">music</form>
     <extent>1 image</extent>
     <internetMediaType>image/tif</internetMediaType>
     <digitalOrigin>reformatted digital</digitalOrigin>
