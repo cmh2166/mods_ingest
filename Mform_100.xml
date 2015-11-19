@@ -62,8 +62,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>LIMform.203</default_value>
-              <description>import Large image MODS form.205 created from LIMform.203 &lt;br&gt;Revise Form by copying Genre in text editor.</description>
+              <default_value>LIMform.206b</default_value>
+              <description>import Large image MODS form.206b created from LIMform.206&lt;br&gt;Revise Form by copying Genre in text editor.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -99,8 +99,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>purpose: revise Genre to select term authority and to be required and repeatable.</default_value>
-              <description>describe purpose of this test.The submit works on form.202</description>
+              <default_value>purpose: Revise dateCreated element to dateCreatedStart and make it required.  Add dateCreatedEnd element. Add attributes encoding, keydate, point to both elements.</default_value>
+              <description>describe purpose of this test. Revise dateCreated element to dateCreatedStart and make it required.  Add dateCreatedEnd element. Add attributes encoding, keydate, point to both elements.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>

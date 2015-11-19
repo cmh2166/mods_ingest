@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.203</title>
-    <subTitle>purpose: revise Genre to select term authority and to be required and repeatable.</subTitle>
+    <title>LIMform.206b</title>
+    <subTitle>purpose: Revise dateCreated element to dateCreatedStart and make it required.  Add dateCreatedEnd element. Add attributes encoding, keydate, point to both elements.</subTitle>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
   <name authority="lcnaf" type="personal">
