@@ -16,24 +16,28 @@ This site will be organized as follows:
 
   1. Mform_100.xml (the ingest form)
   2. Mmods_100.xml (the mods datastream created by Islandora using Mform_100.xml)
+  3. Data files for testing.
+      a. 0012_003299_000201_0001.JPG - Basic Image type
+      b. 0012_003299_000201_0001.tif - Large Image type
+      c. 0012_003299_000201-0001.xml - metadata file to give values for input to formBuilder input form.
   
-To test this file in your own vagrant islandora site:
+To test this input in your own vagrant islandora site:
 
 Basic Image:
-create identifier: 0012_003299_00207_0001
-     ingest image: 0012_003299_00207_0001.jpg 
+create identifier: 0012_003299_000201_0001
+     ingest image: 0012_003299_00201_0001.JPG
 
 1. Copy Mform_100.xml to vagrant/drupal_home/sites/all/modules/islandora_solution_pack_image/xml/islandora_basic_image_form_mods.xml
-2. Ingest 0012_003299_00207_0001
+2. Ingest 0012_003299_00201_0001
 3. View datastream MODS
 
 
 Large Image:
-create identifier: 0012_003299_00207_0001
-     ingest image: 0012_003299_00207_0001.tif
+create identifier: 0012_003299_00201_0001
+     ingest image: 0012_003299_00201_0001.tif
 
 1. Copy Mform_100.xml to vagrant/drupal_home/sites/all/modules/islandora_solution_pack_large_image/xml/islandora_basic_image_form_mods.xml
-2. Ingest 0012_003299_00207_0001
+2. Ingest 0012_003299_00201_0001
 3. View datastream MODS
 
 
