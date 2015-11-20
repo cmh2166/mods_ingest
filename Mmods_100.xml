@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.206b</title>
-    <subTitle>purpose: Revise dateCreated element to dateCreatedStart and make it required.  Add dateCreatedEnd element. Add attributes encoding, keydate, point to both elements.</subTitle>
+    <title>LIMform.206d</title>
+    <subTitle>purpose: add dateCreatedStart fieldset, value and attributes; add dateCreatedEnd fieldset, value and attributes</subTitle>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
   <name authority="lcnaf" type="personal">
@@ -14,8 +14,8 @@
   <typeOfResource>still image</typeOfResource>
   <genre authority="aat">Cartoons</genre>
   <originInfo>
-    <dateCreated encoding="edtf" keyDate="yes" point="start">1951-01-01</dateCreated>
-    <dateCreated encoding="edtf" keyDate="yes" point="end">1971-01-01</dateCreated>
+    <dateCreated qualifier="approximate" point="start" keyDate="yes" encoding="etdf">1951-01-01</dateCreated>
+    <dateCreated qualifier="" point="end" keyDate="yes" encoding="etdf">1952-01-01</dateCreated>
     <publisher>Knoxville News Sentinel</publisher>
     <place>
       <placeTerm authority="marccountry" type="code">USA</placeTerm>
