@@ -838,7 +838,10 @@
         </properties>
         <children/>
       </element>
-      <element name="genre">
+	  
+	  
+	  
+	      <element name="genre">
         <properties>
           <type>tabs</type>
           <access>TRUE</access>
@@ -968,7 +971,9 @@
             </children>
           </element>
         </children>
-      </element>
+      </element>  
+	  
+
       <element name="originInfo">
         <properties>
           <type>fieldset</type>
