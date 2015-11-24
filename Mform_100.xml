@@ -13,7 +13,13 @@
     <properties>
       <type>form</type>
       <access>TRUE</access>
+      <collapsed>FALSE</collapsed>
+      <collapsible>FALSE</collapsible>
+      <disabled>FALSE</disabled>
+      <executes_submit_callback>FALSE</executes_submit_callback>
+      <multiple>FALSE</multiple>
       <required>FALSE</required>
+      <resizable>FALSE</resizable>
       <tree>TRUE</tree>
       <actions>
         <create>NULL</create>
@@ -62,8 +68,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>LIMform.206e</default_value>
-              <description>add language/code dropdown</description>
+              <default_value>LIMform.206f</default_value>
+              <description>Add recordInfo/languageOfCataloging/languageTerm and other recordInfo sub-elements.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -99,8 +105,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>purpose: add language/code dropdown</default_value>
-              <description>purpose: add language/code dropdown</description>
+              <default_value>purpose: add recordInfo fieldset and sub-elements.</default_value>
+              <description>purpose: add recordInfo fieldset and sub-elements.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -989,7 +995,10 @@
               <path>mods:originInfo</path>
               <context>parent</context>
             </read>
-            <update>NULL</update>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
             <delete>NULL</delete>
           </actions>
         </properties>
@@ -1007,7 +1016,7 @@
               <multiple>FALSE</multiple>
               <required>TRUE</required>
               <resizable>FALSE</resizable>
-              <title>Date Created Start </title>
+              <title>Date Created [Single Date or Date Range Start Date]</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1044,7 +1053,7 @@
               <multiple>FALSE</multiple>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
-              <title>Date Created END</title>
+              <title>Date Created [Date Range End Date]</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1187,9 +1196,8 @@
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
           <default_value>eng</default_value>
-          <description>Select a three letter iso639-2b language code from &lt;a
-                        href="http://www.loc.gov/standards/iso639-2/php/code_list.php"
-                        target="_blank"&gt;http://www.loc.gov/standards/iso639-2/php/code_list.php&lt;/a&gt;</description>
+          <description>Select a three letter iso639-2b language code from the select menu.  This list comes from&lt;br&gt; &lt;a  href="http://apps.ncsc.org/wayfarer/showtype.asp?id=325"    target="_blank"
+&gt;http://apps.ncsc.org/wayfarer/showtype.asp?id=325&lt;/a&gt;&lt;br&gt; No Linguistic Content at bottom of the select list.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1647,6 +1655,7 @@
             <znd>Zande</znd>
             <zul>Zulu</zul>
             <zun>Zuni</zun>
+            <zxx>No Linguistic Content</zxx>
           </options>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
@@ -1709,7 +1718,13 @@
             <properties>
               <type>tabs</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Form(s)</title>
               <tree>TRUE</tree>
             </properties>
@@ -1718,7 +1733,13 @@
                 <properties>
                   <type>tabpanel</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
@@ -2541,19 +2562,19 @@
           </element>
         </children>
       </element>
-      <element name="accessCondition">
+      <element name="rights">
         <properties>
           <type>textarea</type>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</default_value>
+          <default_value>The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</default_value>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
-          <title>Rights (mods:accessCondition)</title>
+          <title>Rights (accessCondition)</title>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -2576,6 +2597,761 @@
           </actions>
         </properties>
         <children/>
+      </element>
+      <element name="recordInfo">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Record Info</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>recordInfo</value>
+            </create>
+            <read>
+              <path>mods:recordInfo</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="languageOfCataloging">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>eng</default_value>
+              <description>Select a three letter iso639-2b language code from the select menu. This list comes from
+&lt;br&gt;http://apps.ncsc.org/wayfarer/showtype.asp?id=325
+</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <options>
+                <aar>Afar</aar>
+                <abk>Abkhazian</abk>
+                <ace>Achinese</ace>
+                <ach>Acoli</ach>
+                <ada>Adangme</ada>
+                <afa>Afro-Asiatic (Other)</afa>
+                <afh>Afrihili</afh>
+                <afr>Afrikaans</afr>
+                <aka>Akan</aka>
+                <akk>Akkadian</akk>
+                <alb>Albanian</alb>
+                <ale>Aleut</ale>
+                <alg>Algonquian languages</alg>
+                <amh>Amharic</amh>
+                <ang>English, Old (ca.450-1100)</ang>
+                <apa>Apache languages</apa>
+                <ara>Arabic</ara>
+                <arc>Aramaic</arc>
+                <arg>Aragonese</arg>
+                <arm>Armenian</arm>
+                <arn>Araucanian</arn>
+                <arp>Arapaho</arp>
+                <art>Artificial (Other)</art>
+                <arw>Arawak</arw>
+                <asm>Assamese</asm>
+                <ast>Asturian; Bable</ast>
+                <ath>Athapascan languages</ath>
+                <aus>Australian languages</aus>
+                <ava>Avaric</ava>
+                <ave>Avestan</ave>
+                <awa>Awadhi</awa>
+                <aym>Aymara</aym>
+                <aze>Azerbaijani</aze>
+                <bad>Banda</bad>
+                <bai>Bamileke languages</bai>
+                <bak>Bashkir</bak>
+                <bal>Baluchi</bal>
+                <bam>Bambara</bam>
+                <ban>Balinese</ban>
+                <baq>Basque</baq>
+                <bas>Basa</bas>
+                <bat>Baltic (Other)</bat>
+                <bej>Beja</bej>
+                <bel>Belarusian</bel>
+                <bem>Bemba</bem>
+                <ben>Bengali</ben>
+                <ber>Berber (Other)</ber>
+                <bho>Bhojpuri</bho>
+                <bih>Bihari</bih>
+                <bik>Bikol</bik>
+                <bin>Bini</bin>
+                <bis>Bislama</bis>
+                <bla>Siksika</bla>
+                <bnt>Bantu (Other)</bnt>
+                <bos>Bosnian</bos>
+                <bra>Braj</bra>
+                <bre>Breton</bre>
+                <btk>Batak (Indonesia)</btk>
+                <bua>Buriat</bua>
+                <bug>Buginese</bug>
+                <bul>Bulgarian</bul>
+                <bur>Burmese</bur>
+                <cad>Caddo</cad>
+                <cai>Central American Indian (Other)</cai>
+                <car>Carib</car>
+                <cat>Catalan</cat>
+                <cau>Caucasian (Other)</cau>
+                <ceb>Cebuano</ceb>
+                <cel>Celtic (Other)</cel>
+                <cha>Chamorro</cha>
+                <chb>Chibcha</chb>
+                <che>Chechen</che>
+                <chg>Chagatai</chg>
+                <chi>Chinese</chi>
+                <chk>Chuukese</chk>
+                <chm>Mari</chm>
+                <chn>Chinook jargon</chn>
+                <cho>Choctaw</cho>
+                <chp>Chipewyan</chp>
+                <chr>Cherokee</chr>
+                <chu>Church Slavic; Church Slavonic; Old Bulgarian; Old Church Slavonic, Old Slavonic</chu>
+                <chv>Chuvash</chv>
+                <chy>Cheyenne</chy>
+                <cmc>Chamic languages</cmc>
+                <cop>Coptic</cop>
+                <cor>Cornish</cor>
+                <cos>Corsican</cos>
+                <cpe>Creoles and pidgins, English-based (Other)</cpe>
+                <cpf>Creoles and pidgins, French-based (Other)</cpf>
+                <cpp>Creoles and pidgins, Portuguese-based (Other)</cpp>
+                <cre>Cree</cre>
+                <crp>Creoles and pidgins(Other)</crp>
+                <cus>Cushitic (Other)</cus>
+                <cze>Czech</cze>
+                <dak>Dakota</dak>
+                <dan>Danish</dan>
+                <dar>Dargwa</dar>
+                <day>Dayak</day>
+                <del>Delaware</del>
+                <den>Slave (Athapascan)</den>
+                <dgr>Dogrib</dgr>
+                <din>Dinka</din>
+                <div>Divehi</div>
+                <doi>Dogri</doi>
+                <dra>Dravidian (Other)</dra>
+                <dua>Duala</dua>
+                <dum>Dutch, Middle (ca. 1050-1350)</dum>
+                <dut>Dutch</dut>
+                <dyu>Dyula</dyu>
+                <dzo>Dzongkha</dzo>
+                <efi>Efik</efi>
+                <egy>Egyptian (Ancient)</egy>
+                <eka>Ekajuk</eka>
+                <elx>Elamite</elx>
+                <eng>English</eng>
+                <enm>English, Middle (1100-1500)</enm>
+                <epo>Esperanto</epo>
+                <est>Estonian</est>
+                <ewe>Ewe</ewe>
+                <ewo>Ewondo</ewo>
+                <fan>Fang</fan>
+                <fao>Faroese</fao>
+                <fat>Fanti</fat>
+                <fij>Fijian</fij>
+                <fin>Finnish</fin>
+                <fiu>Finno-Ugrian (Other)</fiu>
+                <fon>Fon</fon>
+                <fre>French</fre>
+                <frm>French, Middle (ca.1400-1600)</frm>
+                <fro>French, Old (842-ca.1400)</fro>
+                <fry>Frisian</fry>
+                <ful>Fulah</ful>
+                <fur>Friulian</fur>
+                <gaa>Ga</gaa>
+                <gay>Gayo</gay>
+                <gba>Gbaya</gba>
+                <gem>Germanic (Other)</gem>
+                <geo>Georgian</geo>
+                <ger>German</ger>
+                <gez>Geez</gez>
+                <gil>Gilbertese</gil>
+                <gla>Gaelic; Scottish Gaelic</gla>
+                <gle>Irish</gle>
+                <glg>Gallegan</glg>
+                <glv>Manx</glv>
+                <gmh>German, Middle High (ca.1050-1500)	</gmh>
+                <goh>German, Old High (ca.750-1050)</goh>
+                <gon>Gondi</gon>
+                <gor>Gorontalo</gor>
+                <got>Gothic</got>
+                <grb>Grebo</grb>
+                <grc>Greek, Ancient (to 1453)</grc>
+                <gre>Greek, Modern (1453-)</gre>
+                <grn>Guarani</grn>
+                <guj>Gujarati</guj>
+                <gwi>Gwich'in</gwi>
+                <hai>Haida</hai>
+                <hau>Hausa</hau>
+                <haw>Hawaiian</haw>
+                <heb>Hebrew</heb>
+                <her>Herero</her>
+                <hil>Hiligaynon</hil>
+                <him>Himachali</him>
+                <hin>Hindi</hin>
+                <hit>Hittite</hit>
+                <hmn>Hmong</hmn>
+                <hmo>Hiri Motu</hmo>
+                <hun>Hungarian</hun>
+                <hup>Hupa</hup>
+                <iba>Iban</iba>
+                <ibo>Igbo</ibo>
+                <ice>Icelandic</ice>
+                <ido>Ido</ido>
+                <iii>Sichuan Yi</iii>
+                <ijo>Ijo</ijo>
+                <iku>Inuktitut</iku>
+                <ile>Interlingue</ile>
+                <ilo>Iloko</ilo>
+                <ina>Interlingua (International Auxiliary Language Association)</ina>
+                <inc>Indic (Other)</inc>
+                <ind>Indonesian</ind>
+                <ine>Indo-European (Other)</ine>
+                <inh>Ingush</inh>
+                <ipk>Inupiaq</ipk>
+                <ira>Iranian (Other)</ira>
+                <iro>Iroquoian languages</iro>
+                <ita>Italian</ita>
+                <jav>Javanese</jav>
+                <jpn>Japanese</jpn>
+                <jpr>Judeo-Persian</jpr>
+                <jrb>Judeo-Arabic</jrb>
+                <kaa>Kara-Kalpak</kaa>
+                <kab>Kabyle</kab>
+                <kac>Kachin</kac>
+                <kal>Kalaallisut</kal>
+                <kam>Kamba</kam>
+                <kan>Kannada</kan>
+                <kar>Karen</kar>
+                <kas>Kashmiri</kas>
+                <kau>Kanuri</kau>
+                <kaw>Kawi</kaw>
+                <kaz>Kazakh</kaz>
+                <kbd>Kabardian</kbd>
+                <kha>Khasi</kha>
+                <khi>Khoisan (Other)</khi>
+                <khm>Khmer</khm>
+                <kho>Khotanese</kho>
+                <kik>Gikuyu; Kikuyu</kik>
+                <kin>Kinyarwanda</kin>
+                <kir>Kirghiz</kir>
+                <kmb>Kimbundu</kmb>
+                <kok>Konkani</kok>
+                <kom>Komi</kom>
+                <kon>Kongo</kon>
+                <kor>Korean</kor>
+                <kos>Kosraean</kos>
+                <kpe>Kpelle</kpe>
+                <kro>Kru</kro>
+                <kru>Kurukh</kru>
+                <kua>Kuanyama; Kwanyama</kua>
+                <kum>Kumyk</kum>
+                <kur>Kurdish</kur>
+                <kut>Kutenai</kut>
+                <lad>Ladino</lad>
+                <lah>Lahnda</lah>
+                <lam>Lamba</lam>
+                <lao>Lao</lao>
+                <lat>Latin</lat>
+                <lav>Latvian</lav>
+                <lez>Lezghian</lez>
+                <lim>Limburgan, Limburger, limburgish	</lim>
+                <lin>Lingala</lin>
+                <lit>Lithuanian</lit>
+                <lol>Mongo</lol>
+                <loz>Lozi</loz>
+                <ltz>Letzeburgesch; Luxembourgish</ltz>
+                <lua>Luba-Lulua</lua>
+                <lub>Luba-Katanga</lub>
+                <lug>Ganda</lug>
+                <lui>Luiseno</lui>
+                <lun>Lunda</lun>
+                <luo>Luo (Kenya and Tanzania)</luo>
+                <lus>Lushai</lus>
+                <mac>Macedonian</mac>
+                <mad>Madurese</mad>
+                <mag>Magahi</mag>
+                <mah>Marshallese</mah>
+                <mai>Maithili</mai>
+                <mak>Makasar</mak>
+                <mal>Malayalam</mal>
+                <man>Mandingo</man>
+                <mao>Maori</mao>
+                <map>Austronesian (Other)</map>
+                <mar>Marathi</mar>
+                <mas>Masai</mas>
+                <may>Malay</may>
+                <mdr>Mandar</mdr>
+                <men>Mende</men>
+                <mga>Irish, Middle (900-1200)</mga>
+                <mic>Micmac</mic>
+                <min>Minangkabau</min>
+                <mis>Miscellaneous languages</mis>
+                <mkh>Mon-Khmer (Other)</mkh>
+                <mlg>Malagasy</mlg>
+                <mlt>Maltese</mlt>
+                <mnc>Manchu</mnc>
+                <mni>Manipuri</mni>
+                <mno>Manobo languages</mno>
+                <moh>Mohawk</moh>
+                <mol>Moldavian</mol>
+                <mon>Mongolian</mon>
+                <mos>Mossi</mos>
+                <mul>Multiple languages</mul>
+                <mun>Munda languages</mun>
+                <mus>Creek</mus>
+                <mwr>Marwari</mwr>
+                <myn>Mayan languages</myn>
+                <nah>Nahuatl</nah>
+                <nai>North American Indian (Other)</nai>
+                <nap>Neapolitan</nap>
+                <nau>Nauru</nau>
+                <nav>Navaho; Navajo</nav>
+                <nbl>Ndebele, South; South Ndebele</nbl>
+                <nde>Ndebele, North; North Ndebele</nde>
+                <ndo>Ndonga</ndo>
+                <nds>German, Low; Low German; Low Saxon; Saxon, Low</nds>
+                <nep>Nepali</nep>
+                <new>Newari</new>
+                <nia>Nias</nia>
+                <nic>Niger-Kordofanian (Other)</nic>
+                <niu>Niuean</niu>
+                <nno>Norwegian Nynorsk; Nynorsk, Norwegian</nno>
+                <nob>Bokmal, Norwegian; Norwegian Bokmal</nob>
+                <non>Norse, Old</non>
+                <nor>Norwegian</nor>
+                <nso>Sotho, Northern</nso>
+                <nub>Nubian languages</nub>
+                <nya>Chewa; Chichewa; Nyanja</nya>
+                <nym>Nyamwezi</nym>
+                <nyn>Nyankole</nyn>
+                <nyo>Nyoro</nyo>
+                <nzi>Nzima</nzi>
+                <oci>Occitan (post 1500); Provencal</oci>
+                <oji>Ojibwa</oji>
+                <ori>Oriya</ori>
+                <orm>Oromo</orm>
+                <osa>Osage</osa>
+                <oss>Ossetian; Ossetic</oss>
+                <ota>Turkish, Ottoman (1500-1928)</ota>
+                <oto>Otomian languages</oto>
+                <paa>Papuan (Other)</paa>
+                <pag>Pangasinan</pag>
+                <pal>Pahlavi</pal>
+                <pam>Pampanga</pam>
+                <pan>Panjabi</pan>
+                <pap>Papiamento</pap>
+                <pau>Palauan</pau>
+                <peo>Persian, Old (ca.600-400)</peo>
+                <per>Persian</per>
+                <phi>Philippine (Other)</phi>
+                <phn>Phoenician</phn>
+                <pli>Pali</pli>
+                <pol>Polish</pol>
+                <pon>Pohnpeian</pon>
+                <por>Portuguese</por>
+                <pra>Prakrit languages</pra>
+                <pro>Provencal, Old (to 1500)</pro>
+                <pus>Pushto</pus>
+                <index key="qaa-qtz">Reserved for local user</index>
+                <que>Quechua</que>
+                <raj>Rajasthani</raj>
+                <rap>Rapanui</rap>
+                <rar>Rarotongan</rar>
+                <roa>Romance (Other)</roa>
+                <roh>Raeto-Romance</roh>
+                <rom>Romany</rom>
+                <rum>Romanian</rum>
+                <run>Rundi</run>
+                <rus>Russian</rus>
+                <sad>Sandawe</sad>
+                <sag>Sango</sag>
+                <sah>Yakut</sah>
+                <sai>South American Indian (Other)</sai>
+                <sal>Salishan languages</sal>
+                <sam>Samaritan Aramaic</sam>
+                <san>Sanskrit</san>
+                <sas>Sasak</sas>
+                <sat>Santali</sat>
+                <scc>Serbian</scc>
+                <sco>Scots</sco>
+                <scr>Croatian</scr>
+                <sel>Selkup</sel>
+                <sem>Semitic (Other)</sem>
+                <sga>Irish, Old (to 900)</sga>
+                <sgn>Sign languages</sgn>
+                <shn>Shan</shn>
+                <sid>Sidamo</sid>
+                <sin>Sinhalese</sin>
+                <sio>Siouan languages</sio>
+                <sit>Sino-Tibetan (Other)</sit>
+                <sla>Slavic (Other)</sla>
+                <slo>Slovak</slo>
+                <slv>Slovenian</slv>
+                <sma>Southern Sami</sma>
+                <sme>Northern Sami</sme>
+                <smi>Sami languages (Other)</smi>
+                <smj>Lule Sami</smj>
+                <smn>Inari Sami</smn>
+                <smo>Samoan</smo>
+                <sms>Skolt Sami</sms>
+                <sna>Shona</sna>
+                <snd>Sindhi</snd>
+                <snk>Soninke</snk>
+                <sog>Sogdian</sog>
+                <som>Somali</som>
+                <son>Songhai</son>
+                <sot>Sotho, Southern</sot>
+                <spa>Castilian; Spanish</spa>
+                <srd>Sardinian</srd>
+                <srr>Serer</srr>
+                <ssa>Nilo-Saharan (Other)</ssa>
+                <ssw>Swati</ssw>
+                <suk>Sukuma</suk>
+                <sun>Sundanese</sun>
+                <sus>Susu</sus>
+                <sux>Sumerian</sux>
+                <swa>Swahili</swa>
+                <swe>Swedish</swe>
+                <syr>Syriac</syr>
+                <tah>Tahitian</tah>
+                <tai>Tai (Other)</tai>
+                <tam>Tamil</tam>
+                <tat>Tatar</tat>
+                <tel>Telugu</tel>
+                <tem>Timne</tem>
+                <ter>Tereno</ter>
+                <tet>Tetum</tet>
+                <tgk>Tajik</tgk>
+                <tgl>Tagalog</tgl>
+                <tha>Thai</tha>
+                <tib>Tibetan</tib>
+                <tig>Tigre</tig>
+                <tir>Tigrinya</tir>
+                <tiv>Tiv</tiv>
+                <tkl>Tokelau</tkl>
+                <tli>Tlingit</tli>
+                <tmh>Tamashek</tmh>
+                <tog>Tonga (Nyasa)</tog>
+                <ton>Tonga (Tonga Islands)</ton>
+                <tpi>Tok Pisin</tpi>
+                <tsi>Tsimshian</tsi>
+                <tsn>Tswana</tsn>
+                <tso>Tsonga</tso>
+                <tuk>Turkmen</tuk>
+                <tum>Tumbuka</tum>
+                <tup>Tupi languages</tup>
+                <tur>Turkish</tur>
+                <tut>Altaic (Other)</tut>
+                <tvl>Tuvalu</tvl>
+                <twi>Twi</twi>
+                <tyv>Tuvinian</tyv>
+                <uga>Ugaritic</uga>
+                <uig>Uighur</uig>
+                <ukr>Ukrainian</ukr>
+                <umb>Umbundu</umb>
+                <und>Undetermined</und>
+                <urd>Urdu</urd>
+                <uzb>Uzbek</uzb>
+                <vai>Vai</vai>
+                <ven>Venda</ven>
+                <vie>Vietnamese</vie>
+                <vol>Volapuk</vol>
+                <vot>Votic</vot>
+                <wak>Wakashan languages</wak>
+                <wal>Walamo</wal>
+                <war>Waray</war>
+                <was>Washo</was>
+                <wel>Welsh</wel>
+                <wen>Sorbian languages</wen>
+                <wln>Walloon</wln>
+                <wol>Wolof</wol>
+                <xho>Xhosa</xho>
+                <yao>Yao</yao>
+                <yap>Yapese</yap>
+                <yid>Yiddish</yid>
+                <yor>Yoruba</yor>
+                <ypk>Yupik languages</ypk>
+                <zap>Zapotec</zap>
+                <zen>Zenaga</zen>
+                <zha>Chuang; Zhuang</zha>
+                <znd>Zande</znd>
+                <zul>Zulu</zul>
+                <zun>Zuni</zun>
+                <zxx>No Linguistic Content</zxx>
+              </options>
+              <required>TRUE</required>
+              <resizable>FALSE</resizable>
+              <title>Language of Cataloging</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;languageOfCataloging&gt;&lt;languageTerm authority="iso639-2b"&gt;%value%&lt;/languageTerm&gt;&lt;/languageOfCataloging&gt;</value>
+                </create>
+                <read>
+                  <path>mods:languageOfCataloging/mods:languageTerm</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="recordContentSource">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>UTK Special Collections Library</default_value>
+              <description>Same as physicalLocation per cmh.  &lt;b&gt;I DON'T KNOW.&lt;/b&gt;</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Record Content Source</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>recordContentSource</value>
+                </create>
+                <read>
+                  <path>mods:recordContentSource</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="recordOrigin">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>UTK Special Collections Library</default_value>
+              <description>Generated on ingest per cmh. &lt;b&gt; I DON'T KNOW.&lt;/b&gt;</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Record Origin</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>recordOrigin</value>
+                </create>
+                <read>
+                  <path>mods:recordOrigin</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="recordCreationDate">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>2016-01-01</default_value>
+              <description>Enter date in the format YYYY-MM-DD</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Record Creation Date</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;recordCreationDate encoding="etdf"&gt;%value%&lt;/recordCreationDate&gt;</value>
+                </create>
+                <read>
+                  <path>mods:recordCreationDate</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="recordChangeDate">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>2016-01-01</default_value>
+              <description>Enter date in the format YYYY-MM-DD</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Record Change Date</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;recordChangeDate encoding="etdf"&gt;%value%&lt;/recordChangeDate&gt;</value>
+                </create>
+                <read>
+                  <path>mods:recordChangeDate</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="recordIdentifier">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>0012_003299_000201_0001</default_value>
+              <description>Same as IdentifierLocal  per cmh.  &lt;b&gt;I DON'T KNOW.&lt;/b&gt;</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Record Identifier</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>recordIdentifier</value>
+                </create>
+                <read>
+                  <path>mods:recordIdentifier</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="recordIdentifier2">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>0012_003299_000201_0001</default_value>
+              <description>Same as IdentifierLocal  per cmh.  &lt;b&gt;I DON'T KNOW.&lt;/b&gt;
+&lt;br&gt;According to Trace Metadata Profile:&lt;br&gt;
+Identifier for the object. Will be used to generated the identifier for the record (stored in recordInfo section)</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Record Identifier</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;recordIdentifier type="local"&gt;%value%&lt;/recordIdentifier&gt;</value>
+                </create>
+                <read>
+                  <path>mods:recordIdentifier</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
       </element>
     </children>
   </form>

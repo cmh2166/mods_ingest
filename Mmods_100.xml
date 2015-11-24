@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.206e</title>
-    <subTitle>purpose: add language/code dropdown</subTitle>
+    <title>LIMform.206f</title>
+    <subTitle>purpose: add recordInfo/languageOfCataloging/languageTerm</subTitle>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
   <name authority="lcnaf" type="personal">
@@ -51,5 +51,16 @@
       <coordinates>lat/long</coordinates>
     </cartographics>
   </subject>
-  <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</accessCondition>
+  <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</accessCondition>
+  <recordInfo>
+    <languageOfCataloging>
+      <languageTerm authority="iso639-2b">eng</languageTerm>
+    </languageOfCataloging>
+    <recordContentSource>UTK Special Collections Library</recordContentSource>
+    <recordOrigin>UTK Special Collections Library</recordOrigin>
+    <recordCreationDate encoding="etdf">2016-01-01</recordCreationDate>
+    <recordChangeDate encoding="etdf">2016-01-01</recordChangeDate>
+    <recordIdentifier>0012_003299_000201_0001</recordIdentifier>
+    <recordIdentifier type="local">0012_003299_000201_0001</recordIdentifier>
+  </recordInfo>
 </mods>
