@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.207</title>
-    <subTitle>purpose:Use HIDDEN variables for dateCreated constant attributes.</subTitle>
+    <title>LIMform.207a</title>
+    <subTitle>purpose:Test repeatability</subTitle>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
   <name authority="lcnaf" type="personal">
@@ -15,6 +15,7 @@
   <genre authority="aat">Cartoons</genre>
   <originInfo>
     <form qualifier="index" keyDate="yes">1908-08-08, August 8, 1908</form>
+    <form qualifier="index" keyDate="yes">July 4, 1776</form>
     <dateCreated qualifier="none" point="start" keyDate="yes" encoding="etdf">1901-01-01</dateCreated>
     <dateCreated qualifier="none" point="end" keyDate="yes" encoding="etdf">1902-02-002</dateCreated>
     <dateCreated qualifier="none" point="end" keyDate="yes" encoding="etdf">1908-08-08</dateCreated>
@@ -25,7 +26,6 @@
     <place>
       <placeTerm type="text">Knoxville, TN</placeTerm>
     </place>
-    <form authority="aat">Cartoons</form>
     <dateIssued qualifier="none" point="start" keyDate="yes" encoding="etdf">1905-05-05</dateIssued>
   </originInfo>
   <language>

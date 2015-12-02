@@ -62,8 +62,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>LIMform.207</default_value>
-              <description>Large image MODS form.207 from import Large image MODS form.206c2 that has dateCreated fieldset added to originInfo.  Must comply with UTK Data Dictionary</description>
+              <default_value>LIMform.207a</default_value>
+              <description>Large image MODS form.207a from import Large image MODS form.206c2 that has dateCreated fieldset added to originInfo.  Must comply with UTK Data Dictionary</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -99,8 +99,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>purpose:Use HIDDEN variables for dateCreated constant attributes.</default_value>
-              <description>describe purpose of this test. Use HIDDEN variables for dateCreated constant attributes.</description>
+              <default_value>purpose:Test repeatability</default_value>
+              <description>describe purpose of this test. Use HIDDEN variables for dateCreated constant attributes. Test repeatability.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -994,7 +994,7 @@
           </actions>
         </properties>
         <children>
-          <element name="formTabsForDateReadable">
+          <element name="DateReadableTabs">
             <properties>
               <type>tabs</type>
               <access>TRUE</access>
@@ -1013,7 +1013,13 @@
                 <properties>
                   <type>tabpanel</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
@@ -1083,7 +1089,7 @@
                   </element>
                   <element name="keyDate">
                     <properties>
-                      <type>hidden</type>
+                      <type>textfield</type>
                       <access>TRUE</access>
                       <collapsed>FALSE</collapsed>
                       <collapsible>FALSE</collapsible>
@@ -1615,7 +1621,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>1902-02-002</default_value>
+                  <default_value>1902-02-02</default_value>
                   <description>Enter date in the format YYYY-MM-DD. </description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1997,149 +2003,6 @@
             </properties>
             <children/>
           </element>
-          <element name="form">
-            <properties>
-              <type>tabs</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Form(s)</title>
-              <tree>TRUE</tree>
-            </properties>
-            <children>
-              <element name="0">
-                <properties>
-                  <type>tabpanel</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>form</value>
-                    </create>
-                    <read>
-                      <path>mods:form</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path/>
-                      <context>document</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
-                </properties>
-                <children>
-                  <element name="authority">
-                    <properties>
-                      <type>select</type>
-                      <access>TRUE</access>
-                      <collapsed>FALSE</collapsed>
-                      <collapsible>FALSE</collapsible>
-                      <default_value>aat</default_value>
-                      <description>&lt;b&gt;local&lt;/b&gt; -- https://docs.google.com/spreadsheets/d/16jPboHUoBS5ZfuopZGoBd5RF79qcE9hHw9QwYNPYzBY/edit?pli=1#gid=0&lt;br/&gt;
-				  &lt;b&gt;aat&lt;/b&gt; --  http://www.getty.edu/research/tools/vocabularies/aat/index.html&lt;br&gt;
-&lt;b&gt;lctgm&lt;/b&gt; --  http://www.loc.gov/rr/print/tgm2/
-&lt;br&gt;
-&lt;b&gt;marcgt&lt;/b&gt; --  http://www.loc.gov/standards/valuelist/marcgt.html</description>
-                      <disabled>FALSE</disabled>
-                      <executes_submit_callback>FALSE</executes_submit_callback>
-                      <multiple>FALSE</multiple>
-                      <options>
-                        <aat>aat</aat>
-                        <lctgm>lctgm</lctgm>
-                        <marcgt>marcgt</marcgt>
-                      </options>
-                      <required>FALSE</required>
-                      <resizable>FALSE</resizable>
-                      <title>Authority</title>
-                      <tree>TRUE</tree>
-                      <actions>
-                        <create>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                          <schema/>
-                          <type>attribute</type>
-                          <prefix>NULL</prefix>
-                          <value>authority</value>
-                        </create>
-                        <read>
-                          <path>@authority</path>
-                          <context>parent</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </update>
-                        <delete>NULL</delete>
-                      </actions>
-                    </properties>
-                    <children/>
-                  </element>
-                  <element name="form">
-                    <properties>
-                      <type>textfield</type>
-                      <access>TRUE</access>
-                      <collapsed>FALSE</collapsed>
-                      <collapsible>FALSE</collapsible>
-                      <default_value>Cartoons</default_value>
-                      <description>A term that best describes the resource. Please select the authority that applies to the term entered in form.
-&lt;br&gt;Use genre to describe the content of  the resource (not the resource itself).
-</description>
-                      <disabled>FALSE</disabled>
-                      <executes_submit_callback>FALSE</executes_submit_callback>
-                      <multiple>FALSE</multiple>
-                      <required>TRUE</required>
-                      <resizable>FALSE</resizable>
-                      <title>Form</title>
-                      <tree>TRUE</tree>
-                      <actions>
-                        <create>
-                          <path>self::node()</path>
-                          <context>parent</context>
-                          <schema/>
-                          <type>xml</type>
-                          <prefix>NULL</prefix>
-                          <value>%value%</value>
-                        </create>
-                        <read>
-                          <path>mods:form</path>
-                          <context>parent</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </update>
-                        <delete>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </delete>
-                      </actions>
-                    </properties>
-                    <children/>
-                  </element>
-                </children>
-              </element>
-            </children>
-          </element>
           <element name="dateIssued">
             <properties>
               <type>fieldset</type>
@@ -2219,7 +2082,7 @@
               </element>
               <element name="point">
                 <properties>
-                  <type>hidden</type>
+                  <type>textarea</type>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
@@ -2259,7 +2122,7 @@
               </element>
               <element name="keyDate">
                 <properties>
-                  <type>hidden</type>
+                  <type>textfield</type>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
@@ -2299,7 +2162,7 @@
               </element>
               <element name="encoding">
                 <properties>
-                  <type>hidden</type>
+                  <type>textfield</type>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
