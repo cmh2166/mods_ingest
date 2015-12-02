@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.206f</title>
-    <subTitle>purpose: add recordInfo fieldset and sub-elements.</subTitle>
+    <title>LIMform.207</title>
+    <subTitle>purpose:Use HIDDEN variables for dateCreated constant attributes.</subTitle>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
   <name authority="lcnaf" type="personal">
@@ -14,8 +14,10 @@
   <typeOfResource>still image</typeOfResource>
   <genre authority="aat">Cartoons</genre>
   <originInfo>
-    <dateCreated encoding="etdf" keyDate="yes" point="start">1951-01-01</dateCreated>
-    <dateCreated encoding="etdf" keyDate="yes" point="end">1952-01-01</dateCreated>
+    <form qualifier="index" keyDate="yes">1908-08-08, August 8, 1908</form>
+    <dateCreated qualifier="none" point="start" keyDate="yes" encoding="etdf">1901-01-01</dateCreated>
+    <dateCreated qualifier="none" point="end" keyDate="yes" encoding="etdf">1902-02-002</dateCreated>
+    <dateCreated qualifier="none" point="end" keyDate="yes" encoding="etdf">1908-08-08</dateCreated>
     <publisher>Knoxville News Sentinel</publisher>
     <place>
       <placeTerm authority="marccountry" type="code">USA</placeTerm>
@@ -23,10 +25,13 @@
     <place>
       <placeTerm type="text">Knoxville, TN</placeTerm>
     </place>
+    <form authority="aat">Cartoons</form>
+    <dateIssued qualifier="none" point="start" keyDate="yes" encoding="etdf">1905-05-05</dateIssued>
   </originInfo>
   <language>
     <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
   </language>
+  <abstract>mods:abstract</abstract>
   <physicalDescription>
     <form authority="aat">Cartoons</form>
     <extent>1 image</extent>
@@ -51,16 +56,5 @@
       <coordinates>lat/long</coordinates>
     </cartographics>
   </subject>
-  <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.</accessCondition>
-  <recordInfo>
-    <languageOfCataloging>
-      <languageTerm authority="iso639-2b">eng</languageTerm>
-    </languageOfCataloging>
-    <recordContentSource>UTK Special Collections Library</recordContentSource>
-    <recordOrigin>UTK Special Collections Library</recordOrigin>
-    <recordCreationDate encoding="etdf">2016-01-01</recordCreationDate>
-    <recordChangeDate encoding="etdf">2016-01-01</recordChangeDate>
-    <recordIdentifier>0012_003299_000201_0001</recordIdentifier>
-    <recordIdentifier type="local">0012_003299_000201_0001</recordIdentifier>
-  </recordInfo>
+  <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</accessCondition>
 </mods>
