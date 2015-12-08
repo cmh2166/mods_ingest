@@ -1,8 +1,9 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>LIMform.207a</title>
-    <subTitle>purpose:Test repeatability</subTitle>
+    <title>Mfx03_002</title>
+    <subTitle>purpose: Make originInfo/place/placeTerm repeatable.  Make originInfo/publisher repeatable.</subTitle>
+    <nonSort>initial</nonSort>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
   <name authority="lcnaf" type="personal">
@@ -14,24 +15,55 @@
   <typeOfResource>still image</typeOfResource>
   <genre authority="aat">Cartoons</genre>
   <originInfo>
-    <form qualifier="index" keyDate="yes">1908-08-08, August 8, 1908</form>
-    <form qualifier="index" keyDate="yes">July 4, 1776</form>
-    <dateCreated qualifier="none" point="start" keyDate="yes" encoding="etdf">1901-01-01</dateCreated>
-    <dateCreated qualifier="none" point="end" keyDate="yes" encoding="etdf">1902-02-002</dateCreated>
-    <dateCreated qualifier="none" point="end" keyDate="yes" encoding="etdf">1908-08-08</dateCreated>
-    <publisher>Knoxville News Sentinel</publisher>
+    <dateCreated qualifier="exact" keyDate="yes" encoding="etdf">1908-08-08</dateCreated>
+    <dateCreated>REQUIRED</dateCreated>
+    <dateCreated qualifier="exact" point="start" keyDate="yes" encoding="etdf">1901-01-01</dateCreated>
+    <dateCreated qualifier="exact" point="end" keyDate="yes" encoding="etdf">1902-02-02</dateCreated>
+    <publisher>publisher 01</publisher>
     <place>
-      <placeTerm authority="marccountry" type="code">USA</placeTerm>
+      <placeTerm type="text">placeTerm 01</placeTerm>
     </place>
-    <place>
-      <placeTerm type="text">Knoxville, TN</placeTerm>
-    </place>
-    <dateIssued qualifier="none" point="start" keyDate="yes" encoding="etdf">1905-05-05</dateIssued>
   </originInfo>
   <language>
     <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
   </language>
   <abstract>mods:abstract</abstract>
+  <location>
+    <url access="object in context" usage="primary display">ObjectInContext</url>
+    <physicalLocation>Repository</physicalLocation>
+    <holdingSimple>
+      <copyInformation>
+        <sublocation>Sub Repository</sublocation>
+      </copyInformation>
+    </holdingSimple>
+    <holdingSimple>
+      <copyInformation>
+        <sublocation>Shelf Locator</sublocation>
+      </copyInformation>
+    </holdingSimple>
+    <url access="preview"> Thumbnail URL</url>
+  </location>
+  <relatedItem displayLabel="Collection" type="host">
+    <titleInfo>
+      <title>Collection Title</title>
+    </titleInfo>
+  </relatedItem>
+  <relatedItem displayLabel="Collection" type="host">
+    <identifier>Coll. ID</identifier>
+  </relatedItem>
+  <relatedItem displayLabel="Project" type="host">
+    <titleInfo>
+      <title>My Great Project</title>
+    </titleInfo>
+  </relatedItem>
+  <relatedItem displayLabel="Project" type="host">
+    <location>
+      <url>Project URL</url>
+    </location>
+  </relatedItem>
+  <note type="ownership">Provenance Note</note>
+  <note type="public">Public Note</note>
+  <note type="private">Private Note</note>
   <physicalDescription>
     <form authority="aat">Cartoons</form>
     <extent>1 image</extent>
@@ -40,6 +72,9 @@
   </physicalDescription>
   <note>mods:note authority attribute is fixed now</note>
   <subject>
+    <name authority="lcnaf" type="personal">
+      <namePart>Charlie Daniel</namePart>
+    </name>
     <topic>topic 01</topic>
     <geographic>geo 01</geographic>
     <temporal>temp 01</temporal>
@@ -58,3 +93,4 @@
   </subject>
   <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</accessCondition>
 </mods>
+
