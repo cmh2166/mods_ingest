@@ -68,8 +68,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>Mfx03_002</default_value>
-              <description>Mfx03_002 from Mfx02_originInfo6e_Extended.xml</description>
+              <default_value>Mfx03_007</default_value>
+              <description>Mfx03_007 from Mfx03_006_revised2.xml</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -105,8 +105,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>purpose: Make originInfo/place/placeTerm repeatable.  Make originInfo/publisher repeatable.</default_value>
-              <description>describe purpose of this test. Make originInfo/place/placeTerm repeatable.  Make originInfo/publisher repeatable.</description>
+              <default_value>purpose:  sequence_no, hierarchicalGeo</default_value>
+              <description>describe purpose of this test. &lt;li&gt; 1. Get rid of sequence_no. &lt;li&gt; 2. split into Large_image and Small_image ingest. &lt;li&gt; 3.  get rid of hierarchicalGeo</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -226,7 +226,6 @@
                     <local>local</local>
                     <filename>filename</filename>
                     <legacy>legacy</legacy>
-                    <sequence_no>sequence_no</sequence_no>
                     <opac>opac</opac>
                     <doi>doi</doi>
                     <isbn>isbn</isbn>
@@ -1052,7 +1051,7 @@
               <multiple>FALSE</multiple>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
-              <title>Publication Date </title>
+              <title>Publication Date  (dateIssued)</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1061,10 +1060,10 @@
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>dateCreated</value>
+                  <value>dateIssued</value>
                 </create>
                 <read>
-                  <path>mods:dateCreated</path>
+                  <path>mods:dateIssued</path>
                   <context>document</context>
                 </read>
                 <update>
@@ -1225,7 +1224,7 @@
                       <value>%value%</value>
                     </create>
                     <read>
-                      <path>mods:dateCreated</path>
+                      <path>mods:dateIssued</path>
                       <context>parent</context>
                     </read>
                     <update>
@@ -2052,6 +2051,46 @@
             </create>
             <read>
               <path>mods:language/mods:languageTerm</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="languageOfCataloging">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <default_value>eng</default_value>
+          <description>Select a three letter iso639-2b language code from &lt;a
+                        href="http://www.loc.gov/standards/iso639-2/php/code_list.php"
+                        target="_blank"&gt;http://www.loc.gov/standards/iso639-2/php/code_list.php&lt;/a&gt;</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Language Of Cataloging</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;languageOfCataloging&gt;&lt;languageTerm authority="iso639-2b"
+                                type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/languageOfCataloging&gt;</value>
+            </create>
+            <read>
+              <path>mods:languageOfCataloging/mods:languageTerm</path>
               <context>parent</context>
             </read>
             <update>
@@ -3214,357 +3253,6 @@
               </element>
             </children>
           </element>
-          <element name="temporal">
-            <properties>
-              <type>tags</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <title>Temporal</title>
-              <tree>TRUE</tree>
-            </properties>
-            <children>
-              <element name="0">
-                <properties>
-                  <type>tag</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>temp 01</default_value>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>temporal</value>
-                    </create>
-                    <read>
-                      <path>mods:temporal</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-            </children>
-          </element>
-          <element name="hierarchicalGeographic">
-            <properties>
-              <type>fieldset</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <title>Geographic Information</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>hierarchicalGeographic</value>
-                </create>
-                <read>
-                  <path>mods:hierarchicalGeographic</path>
-                  <context>parent</context>
-                </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
-              </actions>
-            </properties>
-            <children>
-              <element name="continent">
-                <properties>
-                  <type>select</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>North America</default_value>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <options>
-                    <index key=""/>
-                    <Africa>Africa</Africa>
-                    <Antarctica>Antarctica</Antarctica>
-                    <Asia>Asia</Asia>
-                    <Australia>Australia</Australia>
-                    <Europe>Europe</Europe>
-                    <index key="North America">North America</index>
-                    <index key="South America">South America</index>
-                  </options>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>Continent</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>continent</value>
-                    </create>
-                    <read>
-                      <path>mods:continent</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="country">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>USA</default_value>
-                  <description>Name of a country, i.e. a political entity
-                                        considered a country.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>Country</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>country</value>
-                    </create>
-                    <read>
-                      <path>mods:country</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="province">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>Tennessee</default_value>
-                  <description>Includes first order political divisions called
-                                        provinces within a country, e.g. in Canada.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>Province (State)</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>province</value>
-                    </create>
-                    <read>
-                      <path>mods:province</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="region">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>SEC</default_value>
-                  <description>Includes regions that have status as a
-                                        jurisdiction, usually incorporating more than one first
-                                        level jurisdiction.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>Region</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>region</value>
-                    </create>
-                    <read>
-                      <path>mods:region</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="county">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>Knox</default_value>
-                  <description>Name of the largest local administrative unit in
-                                        various countries, e.g. England.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>County</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>county</value>
-                    </create>
-                    <read>
-                      <path>mods:county</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="city">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>Knoxville</default_value>
-                  <description>Name of an inhabited place incorporated as a city,
-                                        town, etc.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>City</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>city</value>
-                    </create>
-                    <read>
-                      <path>mods:city</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="citySection">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <collapsed>FALSE</collapsed>
-                  <collapsible>FALSE</collapsible>
-                  <default_value>city-sections-value</default_value>
-                  <description>Name of a smaller unit within a populated place,
-                                        e.g., neighborhoods, parks, or streets.</description>
-                  <disabled>FALSE</disabled>
-                  <executes_submit_callback>FALSE</executes_submit_callback>
-                  <multiple>FALSE</multiple>
-                  <required>FALSE</required>
-                  <resizable>FALSE</resizable>
-                  <title>City Section</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>citySection</value>
-                    </create>
-                    <read>
-                      <path>mods:citySection</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>NULL</delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-            </children>
-          </element>
           <element name="cartographics">
             <properties>
               <type>fieldset</type>
@@ -3647,6 +3335,19 @@
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
           <default_value>The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</default_value>
+          <description>Use one of the following options:
+&lt;li&gt;
+The copyright interests in this item remain with the creator. For more information, contact Special Collections at special@utk.edu.&lt;/li&gt;
+
+&lt;li&gt;May be protected by copyright. For more information, contact Special Collections at special@utk.edu.&lt;/li&gt;
+
+&lt;li&gt;No known copyright restrictions.&lt;/li&gt;
+
+&lt;li&gt;Public domain.&lt;/li&gt;
+
+See more info on the Metadata Wiki:
+&lt;a href="https://wiki.lib.utk.edu/display/DLP/UTK+Data+Dictionary" target="_blank"&gt;UTK Data Dictionary&lt;/a&gt;
+</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -3675,6 +3376,116 @@
           </actions>
         </properties>
         <children/>
+      </element>
+      <element name="recordInfo">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>recordInfo</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>recordInfo</value>
+            </create>
+            <read>
+              <path>mods:recordInfo</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="recordOrigin">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>ConstantValue_recordOrigin</default_value>
+              <description>To be generated by digital initiatives/metadata librarian.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>recordOrigin</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>recordOrigin</value>
+                </create>
+                <read>
+                  <path>mods:recordOrigin</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="recordContentSource">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>ConstantValue_recordContentSource</default_value>
+              <description>Autogenerated to be University of Tennessee Libraries and Special Collections. Enter information only if this differs.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>recordContentSource</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>recordContentSource</value>
+                </create>
+                <read>
+                  <path>mods:recordContentSource</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
       </element>
     </children>
   </form>

@@ -1,35 +1,58 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>Mfx03_002</title>
-    <subTitle>purpose: Make originInfo/place/placeTerm repeatable.  Make originInfo/publisher repeatable.</subTitle>
+    <title>Mfx03_007</title>
+    <subTitle>purpose:  sequence_no, hierarchicalGeo</subTitle>
     <nonSort>initial</nonSort>
   </titleInfo>
   <identifier type="local">0012_003299_000206_0001</identifier>
-  <name authority="lcnaf" type="personal">
-    <namePart>Charlie Daniel</namePart>
+  <identifier type="legacy">CDAN_0006</identifier>
+  <name authority="ulan" type="family">
+    <namePart>Mrs. Charlie Daniel</namePart>
     <role>
       <roleTerm authority="marcrelator" type="text">Creator</roleTerm>
+    </role>
+    <role>
+      <roleTerm authority="marcrelator" type="text">Censor</roleTerm>
+    </role>
+    <role>
+      <roleTerm authority="marcrelator" type="text">Writer of preface</roleTerm>
+    </role>
+  </name>
+  <name authority="" type="personal">
+    <namePart/>
+    <role>
+      <roleTerm authority="marcrelator" type="text">Abridger</roleTerm>
+    </role>
+    <role>
+      <roleTerm authority="marcrelator" type="text">Abridger</roleTerm>
     </role>
   </name>
   <typeOfResource>still image</typeOfResource>
   <genre authority="aat">Cartoons</genre>
+  <genre authority="aat">Editorial</genre>
   <originInfo>
-    <dateCreated qualifier="exact" keyDate="yes" encoding="etdf">1908-08-08</dateCreated>
+    <dateIssued qualifier="exact" keyDate="yes" encoding="etdf">1908-08-08</dateIssued>
     <dateCreated>REQUIRED</dateCreated>
-    <dateCreated qualifier="exact" point="start" keyDate="yes" encoding="etdf">1901-01-01</dateCreated>
-    <dateCreated qualifier="exact" point="end" keyDate="yes" encoding="etdf">1902-02-02</dateCreated>
-    <publisher>publisher 01</publisher>
+    <dateCreated>Second Readable Date</dateCreated>
+    <dateCreated qualifier="exact" point="start" keyDate="yes" encoding="etdf">1985-01-01</dateCreated>
+    <dateCreated qualifier="approximate" point="end" keyDate="yes" encoding="etdf">1985-12-12</dateCreated>
+    <publisher>publisher 02 New York Times</publisher>
+    <publisher>publisher 01 Knoxville News Sentinel</publisher>
     <place>
-      <placeTerm type="text">placeTerm 01</placeTerm>
+      <placeTerm type="text">placeTerm 01 Knoxville</placeTerm>
+      <placeTerm type="text">place term 02 Tennessee</placeTerm>
     </place>
   </originInfo>
   <language>
     <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
   </language>
-  <abstract>mods:abstract</abstract>
+  <languageOfCataloging>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </languageOfCataloging>
+  <abstract>mods:abstract - Sorry still not available as multiple.</abstract>
   <location>
-    <url access="object in context" usage="primary display">ObjectInContext</url>
+    <url access="object in context" usage="primary display">ObjectInContext REQUIRED</url>
     <physicalLocation>Repository</physicalLocation>
     <holdingSimple>
       <copyInformation>
@@ -65,7 +88,8 @@
   <note type="public">Public Note</note>
   <note type="private">Private Note</note>
   <physicalDescription>
-    <form authority="aat">Cartoons</form>
+    <form authority="aat">Hand Drawn Cartoon</form>
+    <form authority="aat">Pencil on Paper</form>
     <extent>1 image</extent>
     <internetMediaType>image/tif</internetMediaType>
     <digitalOrigin>reformatted digital</digitalOrigin>
@@ -75,22 +99,20 @@
     <name authority="lcnaf" type="personal">
       <namePart>Charlie Daniel</namePart>
     </name>
+    <name authority="ulan" type="personal">
+      <namePart>Senator Howard Baker</namePart>
+    </name>
+    <topic>topic 02</topic>
     <topic>topic 01</topic>
+    <geographic>geo 02</geographic>
     <geographic>geo 01</geographic>
-    <temporal>temp 01</temporal>
-    <hierarchicalGeographic>
-      <continent>North America</continent>
-      <country>USA</country>
-      <province>Tennessee</province>
-      <region>SEC</region>
-      <county>Knox</county>
-      <city>Knoxville</city>
-      <citySection>city-sections-value</citySection>
-    </hierarchicalGeographic>
     <cartographics>
       <coordinates>lat/long</coordinates>
     </cartographics>
   </subject>
   <accessCondition type="use and reproduction">The copyright interests in this item remain with the creator. For more information, contact Special Coll. at special@utk.edu.</accessCondition>
+  <recordInfo>
+    <recordOrigin>ConstantValue_recordOrigin</recordOrigin>
+    <recordContentSource>ConstantValue_recordContentSource</recordContentSource>
+  </recordInfo>
 </mods>
-
