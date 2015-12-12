@@ -68,7 +68,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>BasicImageMods_revision_form</default_value>
+              <description>Revise mods metadata in Islandora</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -139,7 +139,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>initial</default_value>
               <description>Put any relevant initial articles for the title_of_work into this column. The rest of the title of the work, sans initial article, should appear in the title_of_work column.
 </description>
               <disabled>FALSE</disabled>
@@ -220,6 +219,7 @@
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
+                    <none>none</none>
                     <local>local</local>
                     <filename>filename</filename>
                     <legacy>legacy</legacy>
@@ -261,7 +261,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>0012_003299_000206_0001</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -438,7 +437,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>Charlie Daniel</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -978,7 +976,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>Cartoons</default_value>
                   <description>A term that best describes the content of the resource. Please select the authority that applies to the term entered in genre.
 &lt;br&gt;Use form to describe the resource (not the content).
 </description>
@@ -1214,7 +1211,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>1908-08-08</default_value>
                   <description>Enter date in the format YYYY-MM-DD. </description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1304,7 +1300,6 @@
                       <access>TRUE</access>
                       <collapsed>FALSE</collapsed>
                       <collapsible>FALSE</collapsible>
-                      <default_value>REQUIRED</default_value>
                       <description>Human Readable Date.  Free format.  No abbreviations. REQUIRED.  If you do not fill in this box, the form submission will fail.</description>
                       <disabled>FALSE</disabled>
                       <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1547,7 +1542,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>1901-01-01</default_value>
                   <description>Enter date in the format YYYY-MM-DD. </description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1785,7 +1779,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>1902-02-02</default_value>
                   <description>Enter date in the format YYYY-MM-DD. </description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1839,7 +1832,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>publisher 01</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1922,7 +1914,13 @@
                     <properties>
                       <type>tabpanel</type>
                       <access>TRUE</access>
+                      <collapsed>FALSE</collapsed>
+                      <collapsible>FALSE</collapsible>
+                      <disabled>FALSE</disabled>
+                      <executes_submit_callback>FALSE</executes_submit_callback>
+                      <multiple>FALSE</multiple>
                       <required>FALSE</required>
+                      <resizable>FALSE</resizable>
                       <tree>TRUE</tree>
                       <actions>
                         <create>
@@ -1990,7 +1988,6 @@
                           <access>TRUE</access>
                           <collapsed>FALSE</collapsed>
                           <collapsible>FALSE</collapsible>
-                          <default_value>placeTerm 01</default_value>
                           <disabled>FALSE</disabled>
                           <executes_submit_callback>FALSE</executes_submit_callback>
                           <multiple>FALSE</multiple>
@@ -2117,7 +2114,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>mods:abstract</default_value>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -2187,7 +2183,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>ObjectInContext</default_value>
               <description>Indicates a link to the object within the context of its environment (with associated metadata, navigation, etc.).
 </description>
               <disabled>FALSE</disabled>
@@ -2225,7 +2220,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>Repository</default_value>
               <description>Enter the name of the holding institution.
 </description>
               <disabled>FALSE</disabled>
@@ -2263,7 +2257,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>Sub Repository</default_value>
               <description>Enter the name of a subunit of the holding institution if applicable.
 </description>
               <disabled>FALSE</disabled>
@@ -2301,7 +2294,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>Shelf Locator</default_value>
               <description>Enter box/folder, call number or other locational information.
 </description>
               <disabled>FALSE</disabled>
@@ -2339,7 +2331,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>Thumbnail URL</default_value>
               <description>This is the URL that links to a thumbnail file of the digitized object. These will be added upon Islandora ingest or by the metadata librarian.
 </description>
               <disabled>FALSE</disabled>
@@ -2379,7 +2370,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>Collection Title</default_value>
           <description>Enter the name of the relevant archival collection if applicable using the name that appears in the Archival Collections discovery layer (Scout). Do not use abbreviations.
 </description>
           <disabled>FALSE</disabled>
@@ -2417,7 +2407,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>Coll. ID</default_value>
           <description>Include the identifier for the physical collection that the item to be digitized is a part of.
 </description>
           <disabled>FALSE</disabled>
@@ -2455,7 +2444,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>My Great Project</default_value>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -2491,7 +2479,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>Project URL</default_value>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -2527,7 +2514,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>Provenance Note</default_value>
           <description>Enter information regarding the origin, custody, and ownership of an item, e.g., Gift of Robert Biggert in honor of Lisa Ann Riveaux.
 </description>
           <disabled>FALSE</disabled>
@@ -2565,7 +2551,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>Public Note</default_value>
           <description>Enter any relevant information that should be publicly viewable but that does not belong in any of the other fields.
 
 </description>
@@ -2604,7 +2589,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>Private Note</default_value>
           <description>Use to convey questions or problems to project staff. This field will not be displayed publicly. 
 
 
@@ -2772,7 +2756,6 @@
                       <access>TRUE</access>
                       <collapsed>FALSE</collapsed>
                       <collapsible>FALSE</collapsible>
-                      <default_value>Cartoons</default_value>
                       <description>A term that best describes the resource. Please select the authority that applies to the term entered in form.
 &lt;br&gt;Use genre to describe the content of  the resource (not the resource itself).
 </description>
@@ -2818,7 +2801,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>1 image</default_value>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -2859,8 +2841,8 @@
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
               <options>
-                <index key="image/jpg">image/jpg</index>
                 <index key="image/jpeg">image/jpeg</index>
+                <index key="image/jpg">image/jpg</index>
               </options>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
@@ -2936,7 +2918,6 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>mods:note authority attribute is fixed now</default_value>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -3119,7 +3100,6 @@
                       <access>TRUE</access>
                       <collapsed>FALSE</collapsed>
                       <collapsible>FALSE</collapsible>
-                      <default_value>Charlie Daniel</default_value>
                       <disabled>FALSE</disabled>
                       <executes_submit_callback>FALSE</executes_submit_callback>
                       <multiple>FALSE</multiple>
@@ -3177,7 +3157,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>topic 01</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3226,7 +3205,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>geo 01</default_value>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3297,7 +3275,6 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>lat/long</default_value>
                   <description>Contains a statement of coordinates covered by the
                                         resource.  
 &lt;br&gt;Latitude: 35.964668 N 
@@ -3424,7 +3401,7 @@ See more info on the Metadata Wiki:
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>ConstantValue_recordOrigin</default_value>
+              <default_value>Entered by metadata Librarian</default_value>
               <description>To be generated by digital initiatives/metadata librarian.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
@@ -3461,7 +3438,7 @@ See more info on the Metadata Wiki:
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>ConstantValue_recordContentSource</default_value>
+              <default_value>Entered by metadata Librarian</default_value>
               <description>Autogenerated to be University of Tennessee Libraries and Special Collections. Enter information only if this differs.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>

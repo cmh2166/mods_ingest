@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
   <titleInfo>
-    <title>Mfx03_007b</title>
+    <title>Nform_202_02</title>
     <subTitle>purpose:  Fix name.</subTitle>
     <nonSort>initial</nonSort>
   </titleInfo>
@@ -10,21 +10,6 @@
     <namePart>Charlie Daniel</namePart>
     <role>
       <roleTerm authority="marcrelator" type="text">Creator</roleTerm>
-    </role>
-    <role>
-      <roleTerm authority="marcrelator" type="text">Abridger</roleTerm>
-    </role>
-  </name>
-  <name authority="ulan" type="personal">
-    <namePart>Mrs. Charlie Daniel</namePart>
-    <role>
-      <roleTerm authority="marcrelator" type="text">Abridger</roleTerm>
-    </role>
-    <role>
-      <roleTerm authority="marcrelator" type="text">Censor</roleTerm>
-    </role>
-    <role>
-      <roleTerm authority="marcrelator" type="text">Papermaker</roleTerm>
     </role>
   </name>
   <typeOfResource>still image</typeOfResource>
@@ -104,10 +89,5 @@
     <recordOrigin>ConstantValue_recordOrigin</recordOrigin>
     <recordContentSource>ConstantValue_recordContentSource</recordContentSource>
   </recordInfo>
-  <name authority="lcnaf" type="personal">
-    <namePart>Charlie Daniel</namePart>
-    <role>
-      <roleTerm authority="marcrelator" type="text">Creator</roleTerm>
-    </role>
-  </name>
 </mods>
+
